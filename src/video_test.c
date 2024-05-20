@@ -32,7 +32,7 @@ int main(int argc, char **argv)
         /* 枚举格式 */
         fmtdesc.index = fmt_index;
         fmtdesc.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-        if (0 != ioctl(fd, VIDIOC_ENUM_FMT, &fmtdesc))
+        if (ioctl(fd, VIDIOC_ENUM_FMT, &fmtdesc))
             break;
         frame_index = 0;
         while (1)
